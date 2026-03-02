@@ -30,7 +30,7 @@ public class GameLoader {
         try (JarInputStream jarIn = new JarInputStream(gameURL.openStream())) {
             ZipEntry entry;
             while ((entry = jarIn.getNextEntry()) != null) {
-                if (entry.getName().endsWith(".class") && entry.getName().contains("$")) {
+                if (entry.getName().endsWith(".class") && !(entry.getName().contains("$"))) {
                     binaryClassNames.add(entry.getName().substring(0, entry.getName().length() - 6).replace('/', '.').replace('\\', '.'));
                 }
             }
