@@ -24,12 +24,7 @@ public class Main {
 
         File gameLocation = null;
 
-        try {
-            gameLocation = new File(gamePath);
-        } catch (NullPointerException npe) {
-            System.err.println("No path has been given!");
-            return;
-        }
+        gameLocation = new File(gamePath);
 
         if (!gameLocation.exists()) {
             System.err.println("Invalid path!");
