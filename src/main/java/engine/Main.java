@@ -13,7 +13,15 @@ import java.net.URLClassLoader;
 
 public class Main {
     public static void main(String[] args) {
-        String gamePath = args[0];
+        String gamePath = null;
+
+        try {
+            gamePath = args[0];
+        } catch (IndexOutOfBoundsException e) {
+            System.err.println("No path was given");
+            return;
+        }
+
         File gameLocation = null;
 
         try {
