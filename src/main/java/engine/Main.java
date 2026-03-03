@@ -12,8 +12,11 @@ import java.net.URL;
 import java.net.URLClassLoader;
 
 public class Main {
+
+    public static boolean isRunning = true;
+
     public static void main(String[] args) {
-        String gamePath = null;
+        String gamePath;
 
         try {
             gamePath = args[0];
@@ -22,7 +25,7 @@ public class Main {
             return;
         }
 
-        File gameLocation = null;
+        File gameLocation;
 
         gameLocation = new File(gamePath);
 
