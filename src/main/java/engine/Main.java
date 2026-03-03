@@ -52,6 +52,32 @@ public class Main {
             System.err.println("An internal error has occurred: " + e.getMessage());
         }
 
+
+        /* MAINLOOP */
+
+        final double TICKS_PER_SECOND = 60.0;
+        final double NANOSECONDS_PER_TICK = 1_000_000_000.0 / TICKS_PER_SECOND;
+
+        long lastTime = System.nanoTime();
+        double delta = 0;
+
+        while (Main.isRunning) {
+            long now = System.nanoTime();
+            delta += (now - lastTime) / NANOSECONDS_PER_TICK;
+            lastTime = now;
+
+            while (delta >= 1) {
+                MainLoop.mainloop(gameContainer);
+                delta--;
+            }
+
+            try {
+                Thread.sleep(1);
+            } catch (InterruptedException e) {
+                Main.isRunning = false;
+            }
+        }
+
         try {
             gameContainer.close();
         } catch (Exception e) {
