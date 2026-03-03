@@ -37,7 +37,7 @@ public class Main {
         try {
             gameURL = gameLocation.toURI().toURL();
         } catch (MalformedURLException e) {
-            System.err.println("An internal error has occurred: " + e.getMessage());
+            System.err.println("An internal error has occurred:\n " + e.getMessage());
             return;
         }
 
@@ -50,7 +50,7 @@ public class Main {
             gameClassLoader = gameContainer.getLoader();
         } catch (IOException | NoSuchMethodException | InvocationTargetException | ClassNotFoundException |
                  InstantiationException | IllegalAccessException e) {
-            System.err.println("An internal error has occurred: " + e.getMessage());
+            System.err.println("An internal error has occurred:\n " + e.getMessage());
         }
 
 
@@ -82,7 +82,7 @@ public class Main {
         try {
             gameContainer.close();
         } catch (Exception e) {
-            System.err.println("An internal error has occurred: " + e.getMessage());
+            System.err.println("An internal error has occurred:\n " + e.getMessage());
         }
     }
 
