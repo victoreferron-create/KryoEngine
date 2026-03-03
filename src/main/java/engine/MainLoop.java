@@ -6,7 +6,7 @@ import world.Level;
 import world.PhysicalGameObject;
 
 public class MainLoop {
-    public static void mainloop(GameContainer gameContainer) {
+    public static void tick(GameContainer gameContainer) {
         IKryoGame game = gameContainer.getGame();
 
         Level level = game.getCurrentLevel();
