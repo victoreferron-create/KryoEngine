@@ -15,7 +15,7 @@ public class Main {
             System.err.println("Invalid argument count: " + args.length + ". Requires 1 argument");
             return;
         }
-
+        // network test
 
         URL gameURL;
 
