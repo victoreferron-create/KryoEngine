@@ -25,9 +25,7 @@ public class Main {
             return;
         }
 
-        File gameLocation;
-
-        gameLocation = new File(gamePath);
+        File gameLocation = new File(gamePath);
 
         if (!gameLocation.exists()) {
             System.err.println("Invalid path!");
