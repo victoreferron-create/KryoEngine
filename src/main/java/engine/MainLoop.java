@@ -26,6 +26,32 @@ public class MainLoop {
         }
     }
 
+    public static void render(GameContainer gameContainer) {
+        BufferStrategy bs = gameContainer.getCanvas().getBufferStrategy();
+
+        if (bs == null) return;
+
+        Graphics g = bs.getDrawGraphics();
+
+        Graphics2D g2d = (Graphics2D) g;
+
+        try {
+
+
+            g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+
+            g2d.clearRect(0,0, gameContainer.getCanvas().getWidth(), gameContainer.getCanvas().getHeight());
+
+            for (PhysicalGameObject object : gameContainer.getGame().getCurrentLevel().getLevelContents()) {
+                object.render(g2d);
+            }
+        } finally {
+            g2d.dispose();
+        }
+
+        bs.show();
+    }
+
 
 
     public static void mainloop(Runnable task) {
