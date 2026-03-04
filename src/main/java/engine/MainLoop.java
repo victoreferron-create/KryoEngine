@@ -6,6 +6,9 @@ import org.jetbrains.annotations.NotNull;
 import world.Level;
 import world.PhysicalGameObject;
 
+import java.awt.*;
+import java.awt.image.BufferStrategy;
+
 public class MainLoop {
 
     private static double nsPerTick = 1_000_000_000 / 60.0;
