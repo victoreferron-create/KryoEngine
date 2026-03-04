@@ -28,7 +28,7 @@ public class MainLoop {
             object.tick();
         }
     }
-
+    
     public static void render(@NotNull GameContainer gameContainer) {
         BufferStrategy bs = gameContainer.getCanvas().getBufferStrategy();
 
