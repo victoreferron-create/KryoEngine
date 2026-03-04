@@ -28,6 +28,7 @@ public class Main {
 
                 MainLoop.mainloop(() -> {
                     MainLoop.tick(gameContainer);
+                    MainLoop.render(gameContainer);
 
                     if (gameContainer.getGame().getIsStopped()) {
                         MainLoop.stop();
