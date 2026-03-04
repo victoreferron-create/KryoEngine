@@ -29,7 +29,7 @@ public class MainLoop {
         }
     }
 
-    public static void render(GameContainer gameContainer) {
+    public static void render(@NotNull GameContainer gameContainer) {
         BufferStrategy bs = gameContainer.getCanvas().getBufferStrategy();
 
         if (bs == null) return;
